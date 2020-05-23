@@ -1,3 +1,3 @@
-<mat-slider min="1" max="100" step="1" value="1"></mat-slider>
-<app-create-todo></app-create-todo>
-<app-list></app-list>
+<!-- <mat-slider min="1" max="100" step="1" value="1"></mat-slider> -->
+<app-create-todo (notify)="dataFromChild($event)" ></app-create-todo>
+<app-list [data]="dataToChild()"></app-list>
