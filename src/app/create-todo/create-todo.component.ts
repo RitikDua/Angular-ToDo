@@ -50,7 +50,13 @@ export class CreateTodoComponent implements OnInit {
 
   //All Data from create-todo-form
 	data(description:HTMLInputElement,title:HTMLInputElement,keywords:HTMLInputElement){
-		this.description=description.value;
+	if(title.value==="")
+  {
+    return;
+  }
+
+
+  	this.description=description.value;
 			this.title=title.value;
 			console.log(this.title+" "+this.description+" "+this.keywords);
 	//reset input value

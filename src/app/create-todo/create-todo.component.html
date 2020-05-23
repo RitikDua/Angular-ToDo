@@ -3,7 +3,7 @@
 <form class="form">
   <mat-form-field class="full-width">
     <mat-label>Title</mat-label>
-    <input #title matInput value="" placeholder="Coding" >
+    <input required #title matInput value="" placeholder="Coding" >
   </mat-form-field>
 
   <mat-form-field class="full-width">
@@ -19,7 +19,7 @@
       {{keyword.name}}
       <mat-icon matChipRemove *ngIf="removable">cancel</mat-icon>
     </mat-chip>
-    <input matTooltip="press enter after each word" #keywordInput placeholder="Keywords..."
+    <input matTooltip="press enter after each word" #keywordInput placeholder="press enter after each keyword..."
            [matChipInputFor]="chipList"
            [matChipInputSeparatorKeyCodes]="separatorKeysCodes"
            [matChipInputAddOnBlur]="addOnBlur"
