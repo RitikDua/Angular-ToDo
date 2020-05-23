@@ -1,18 +1,12 @@
+.form {
+  min-width: 150px;
+  max-width: 500px;
+  width: 100%;
+}
 
-.hr {
-    display: flex;
-    align-items: center;
-    text-align: center;
-	color:rgba(0,0,0,0.6);
+.full-width {
+  width: 100%;
 }
-.hr::before, .hr::after {
-    content: '';
-    flex: 1;
-    border-bottom: 1px solid rgba(0,0,0,0.3);
-}
-.hr::before {
-    margin-right: .25em;
-}
-.hr::after {
-    margin-left: .25em;
+.chip-list {
+  width: 100%;
 }

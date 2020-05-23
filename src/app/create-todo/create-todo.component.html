@@ -1,24 +1,33 @@
-<br>
+<mat-divider></mat-divider>
 <div class="container">
-<div class="input-group mb-3">
-  <div class="input-group-prepend">
-    <span class="input-group-text" id="basic-addon1">TITLE</span>
-  </div>
-  <input type="text" class="form-control" placeholder="Username" aria-label="Username" aria-describedby="basic-addon1">
-</div>
-<div class="input-group">
-  <div class="input-group-prepend">
-    <span class="input-group-text">Description</span>
-  </div>
-  <textarea class="form-control" aria-label="With textarea"></textarea>
-</div>
+<form class="form">
+  <mat-form-field class="full-width">
+    <mat-label>Title</mat-label>
+    <input #title matInput value="" placeholder="Coding" >
+  </mat-form-field>
 
-<div class="hr">Or</div>
+  <mat-form-field class="full-width">
+    <mat-label>Description</mat-label>
+    <textarea value="" #description matInput placeholder="Complete Angular Component of Create Todo"></textarea>
+  </mat-form-field>
 
-<div class="input-group">
-  <div class="input-group-prepend">
-    <span class="input-group-text">Keywords</span>
-  </div>
-  <textarea id="keywords" rows="1" cols="1" class="form-control" aria-label="With textarea"></textarea>
-</div>
+</form>
+<mat-form-field class="chip-list">
+  <mat-chip-list #chipList aria-label="keyword selection">
+    <mat-chip *ngFor="let keyword of keywords" [selectable]="selectable"
+             [removable]="removable" (removed)="remove(keyword)">
+      {{keyword.name}}
+      <mat-icon matChipRemove *ngIf="removable">cancel</mat-icon>
+    </mat-chip>
+    <input #keyword placeholder="Keywords..."
+           [matChipInputFor]="chipList"
+           [matChipInputSeparatorKeyCodes]="separatorKeysCodes"
+           [matChipInputAddOnBlur]="addOnBlur"
+           (matChipInputTokenEnd)="add($event)">
+  </mat-chip-list>
+</mat-form-field>    <button mat-raised-button color="primary"
+(click)="data(description,title)"
+>Submit</button>
+
+
 </div>

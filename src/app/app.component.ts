@@ -7,4 +7,13 @@ import { Component } from '@angular/core';
 })
 export class AppComponent {
   title = 'todo';
+  data:Object;
+  dataFromChild(data:any){
+  	this.data=data;
+  	console.log(data);
+  }
+  dataToChild(){
+  	// console.log(data);
+  	return this.data;
+  }
 }
