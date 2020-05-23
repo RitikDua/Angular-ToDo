@@ -1,3 +1,12 @@
 <!-- <mat-slider min="1" max="100" step="1" value="1"></mat-slider> -->
+<div class="container-fluid header" >
+<mat-toolbar color="primary">
+  <mat-toolbar-row>
+    <h2 style="margin-left:45vw;"class="center">ToDo</h2>
+ 
+
+  </mat-toolbar-row>
+</mat-toolbar>
+</div>
 <app-create-todo (notify)="dataFromChild($event)" ></app-create-todo>
 <app-list [data]="dataToChild()"></app-list>

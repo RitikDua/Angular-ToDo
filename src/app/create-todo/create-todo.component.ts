@@ -47,19 +47,20 @@ export class CreateTodoComponent implements OnInit {
       input.value = '';
     }
   }
-  addKeyword(data:HTMLInputElement):void{
-  	console.log(data.value);
-  }
+
   //All Data from create-todo-form
-	data(description:HTMLInputElement,title:HTMLInputElement){
+	data(description:HTMLInputElement,title:HTMLInputElement,keywords:HTMLInputElement){
 		this.description=description.value;
 			this.title=title.value;
 			console.log(this.title+" "+this.description+" "+this.keywords);
 	//reset input value
 	title.value="";
 	description.value="";
+  keywords.value="";
+
+
 	this.notify.emit({"title":this.title,"description":this.description,"keywords":this.keywords});
-			
+	this.keywords=[];		
 	}
   remove(keyword: keyword): void {
     const index = this.keywords.indexOf(keyword);

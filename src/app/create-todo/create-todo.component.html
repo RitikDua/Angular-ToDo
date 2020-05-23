@@ -19,14 +19,14 @@
       {{keyword.name}}
       <mat-icon matChipRemove *ngIf="removable">cancel</mat-icon>
     </mat-chip>
-    <input matTooltip="press enter after each word" #keyword placeholder="Keywords..."
+    <input matTooltip="press enter after each word" #keywordInput placeholder="Keywords..."
            [matChipInputFor]="chipList"
            [matChipInputSeparatorKeyCodes]="separatorKeysCodes"
            [matChipInputAddOnBlur]="addOnBlur"
            (matChipInputTokenEnd)="add($event)">
   </mat-chip-list>
 </mat-form-field>    <button mat-raised-button color="primary"
-(click)="data(description,title)"
+(click)="data(description,title,keywordInput)"
 >Submit</button>
 
 
