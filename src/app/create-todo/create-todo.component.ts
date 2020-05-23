@@ -19,9 +19,6 @@ export class CreateTodoComponent implements OnInit {
 
   title:string;
   description:string;
- 
-  constructor() {this.title="";this.description=""; }
-
   visible = true;
   selectable = true;
   removable = true;
@@ -32,12 +29,15 @@ export class CreateTodoComponent implements OnInit {
     {name: 'Component'},
     {name: 'Todo'},
   ];
+ 
+  constructor() {this.title="";this.description="";this.keywords=[]; }
+
 
   add(event: MatChipInputEvent): void {
     const input = event.input;
     const value = event.value;
 
-    // Add our fruit
+    // Add our keyword
     if ((value || '').trim()) {
       this.keywords.push({name: value.trim()});
     }
@@ -46,6 +46,9 @@ export class CreateTodoComponent implements OnInit {
     if (input) {
       input.value = '';
     }
+  }
+  addKeyword(data:HTMLInputElement):void{
+  	console.log(data.value);
   }
   //All Data from create-todo-form
 	data(description:HTMLInputElement,title:HTMLInputElement){

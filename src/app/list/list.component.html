@@ -1,1 +1,36 @@
-<p>{{retrieveData()}}</p>
+<mat-divider></mat-divider>
+<div class="container"  *ngIf='retrieveData()'>
+
+<mat-accordion>
+<div *ngFor="let obj of getData()">
+  
+  <mat-expansion-panel (opened)="panelOpenState = true"
+                       (closed)="panelOpenState = false">
+    
+    <mat-expansion-panel-header>
+      
+
+      <mat-panel-title>
+      	
+      <mat-icon (click)="delthis(obj)"
+      		style="color:rgba(0,0,0,0.6);"	>delete</mat-icon>
+
+        &nbsp;&nbsp;{{obj.title}}
+      </mat-panel-title>
+      <mat-panel-description>
+      	<p>
+    	<span *ngFor="let keyword of obj.keywords">{{keyword.name|lowercase}} &nbsp;</span></p>
+      </mat-panel-description>
+    </mat-expansion-panel-header>
+    <p>
+    	{{obj.description}}
+    </p>
+  </mat-expansion-panel>
+</div>
+</mat-accordion>
+
+
+</div>
+
+<!-- 
+ <mat-slider min="1" max="100" step="1" value="1"></mat-slider> -->
